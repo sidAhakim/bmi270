@@ -1,0 +1,13 @@
+&spi4 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    cs-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;  // P1.04 for CS
+    pinctrl-0 = <&spi4_default>;
+    pinctrl-1 = <&spi4_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&bmi270 {
+    status = "okay";
+    spi-max-frequency = <8000000>;
+};
